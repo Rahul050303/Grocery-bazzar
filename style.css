@@ -1,0 +1,554 @@
+
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2E7D32; 
+    --accent-color: #FFC107; 
+    --text-color-dark: #333;
+    --text-color-light: #fff;
+    --bg-light: #f8f9fa;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+  }
+  
+  /* --- Reusable Components --- */
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+  }
+  
+  .btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+  }
+  
+  /* --- Header & Navbar --- */
+  .header {
+    background-color: var(--text-color-light);
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--secondary-color);
+  }
+  
+  .logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .nav-logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--primary-color);
+  }
+  
+  .cart-link {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+  }
+  
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* --- Hero Section --- */
+  .hero {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://thumbs.dreamstime.com/b/full-shopping-cart-fruits-vegetables-inside-supermarket-healthy-food-grocery-concept-297453488.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color-light);
+  }
+  
+  .hero-content {
+    max-width: 600px;
+  }
+  
+  .hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* --- Shop Section --- */
+  .shop-section {
+    padding: 60px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .shop-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .item-card {
+    background: var(--text-color-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .item-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  
+  .item-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .item-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+  }
+  
+  .item-card .price {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .btn-add-to-cart {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-add-to-cart:hover {
+    background-color: var(--primary-color);
+  }
+  
+  /* --- About Section --- */
+  .about-section {
+      padding: 60px 5%;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background-color: #e8f5e9;
+  }
+  
+  .about-content {
+      flex: 1;
+  }
+  
+  .about-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+  }
+  
+  .about-image {
+      flex: 1;
+  }
+  
+  .about-image img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+  }
+  
+  /* --- Contact Section --- */
+  .contact-section {
+      padding: 60px 5%;
+  }
+  
+  .contact-container {
+      display: flex;
+      gap: 40px;
+      background: var(--text-color-light);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+  }
+  
+  .contact-info, .contact-form {
+      flex: 1;
+  }
+  
+  .contact-info p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+  }
+  
+  .contact-info i {
+      color: var(--primary-color);
+      margin-right: 10px;
+  }
+  
+  .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+  }
+  
+  .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+  }
+  
+  /* --- Footer --- */
+  .footer {
+      background-color: #2c3e50;
+      color: var(--text-color-light);
+      padding: 40px 5% 20px;
+  }
+  
+  .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+  }
+  
+  .footer-col {
+      flex: 1;
+      min-width: 200px;
+  }
+  
+  .footer-col h3, .footer-col h4 {
+      margin-bottom: 15px;
+      color: var(--text-color-light);
+  }
+  
+  .footer-col ul {
+      list-style: none;
+  }
+  
+  .footer-col ul li a {
+      color: #bdc3c7;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+  
+  .footer-col ul li a:hover {
+      color: var(--primary-color);
+  }
+  
+  .social-links a {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin-right: 10px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #fff;
+      transition: background-color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+      background-color: var(--primary-color);
+  }
+  
+  .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+  }
+  
+  
+  @media (max-width: 768px) {
+      .nav-menu {
+          position: fixed;
+          left: -100%;
+          top: 80px; 
+          flex-direction: column;
+          background-color: #fff;
+          width: 100%;
+          text-align: center;
+          transition: 0.3s;
+          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+      }
+      .nav-menu.active {
+          left: 0;
+      }
+      .nav-item {
+          padding: 1.5rem 0;
+      }
+      .hamburger {
+          display: block;
+      }
+      .hamburger.active .bar:nth-child(2) {
+          opacity: 0;
+      }
+      .hamburger.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+      }
+      .hamburger.active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+      }
+  
+      .hero h2 {
+          font-size: 2.2rem;
+      }
+  
+      .about-section, .contact-container {
+          flex-direction: column;
+      }
+  }
+  /* --- Add these styles to your existing style.css file --- */
+
+/* Cart Link in Navbar */
+.cart-link {
+    position: relative;
+}
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: var(--accent-color);
+    color: var(--text-color-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Cart Side Panel */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.cart-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1002;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.cart-panel.active {
+    transform: translateX(0);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+.cart-header h2 {
+    color: var(--secondary-color);
+}
+.close-cart-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.cart-items-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.cart-empty-msg {
+    text-align: center;
+    color: #777;
+    margin-top: 2rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+.cart-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+.cart-item-details {
+    flex-grow: 1;
+}
+.cart-item-details h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+.cart-item-price {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+.quantity-btn {
+    background: #f1f1f1;
+    border: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.quantity-value {
+    margin: 0 0.75rem;
+}
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 1.2rem;
+}
+
+.cart-footer {
+    padding: 1rem;
+    border-top: 1px solid #eee;
+}
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.btn-checkout {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-checkout:hover {
+    background-color: var(--secondary-color);
+}
